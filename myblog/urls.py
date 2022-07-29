@@ -16,7 +16,7 @@ Including another URLconf
 from django.urls import path,include
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 # index는 대문, blog는 게시판
 
 # 이미지를 업로드하자
@@ -24,8 +24,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',include('main.urls')),
+    re_path('admin/', admin.site.urls),
+    re_path('',include('main.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
