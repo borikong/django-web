@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog List</title>
+</head>
+<body>
+    <h1>My posts</h1>
+    <hr/>
+    <table>
+        {% for list in postlist %}
+        <ul>
+            <li><a href="{{list.pk}}">{{list.postname}}</a></li>
+        </ul>
+        {% endfor %}
+    </table>
+</body>
+</html>
