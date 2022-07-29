@@ -1,0 +1,25 @@
+<!--글 분류-->
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">ALL</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'main:categorized' pk='python-django' %}">PYTHON/DJANGO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'main:categorized' pk='java-spring' %}">JAVA/SPRING</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'main:categorized' pk='android' %}">ANDROID</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'main:categorized' pk='ml' %}">ML</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'main:categorized' pk='ps' %}">PS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" href="{% url 'main:categorized' pk='etc' %}">ETC</a>
+                        </li>
+                    </ul>
+                    <br/>
