@@ -25,7 +25,7 @@
 						<h2 class="heading">{{post.postname}}</h2>
     <p>{{post.created_at}}</p>
 						<hr/>
-    <p>{{post.contents|linebreaksbr}}</p>
+    <pre>{{post.contents|linebreaks}}</pre>
 
     {% if post.mainphoto %}
         <img src="{{post.mainphoto.url}}" alt="이미지2" height="600">
