@@ -17,8 +17,19 @@ class Post(models.Model):
     postname=models.CharField(max_length=50)
     contents=models.TextField()
     mainphoto=models.ImageField(blank=True,null=True)
+    subphoto1=models.ImageField(blank=True, null=True)
+    subphoto1 = models.ImageField(blank=True, null=True)
+    subphoto2 = models.ImageField(blank=True, null=True)
+    subphoto3 = models.ImageField(blank=True, null=True)
+    subphoto4 = models.ImageField(blank=True, null=True)
+    subphoto5 = models.ImageField(blank=True, null=True)
+    subphoto6 = models.ImageField(blank=True, null=True)
+    subphoto7 = models.ImageField(blank=True, null=True)
+    subphoto8 = models.ImageField(blank=True, null=True)
+    subphoto9 = models.ImageField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.postname
 

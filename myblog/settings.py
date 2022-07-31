@@ -15,11 +15,6 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-STATIC_URL='/static/'
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-4kcg28)k(nnqf)8d%sap)@+kn_$l&%p00fwf_7+2s-z4mkj-iu'
@@ -125,5 +120,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_URL='/static/'
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
