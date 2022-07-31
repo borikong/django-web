@@ -2,7 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0e974f8-fd26-43d2-9673-5eb3293e385a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/main/templates/main/writing.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/writing.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/aos.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/flaticon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/icomoon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/ionicons.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/owl.carousel.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/owl.theme.default.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/about.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/autocerti1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/autodocu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/css.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/django.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/drmeong_screenshot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/firebase.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/html.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/java.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/javascript.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/jsp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/loc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/mysql.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/python_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/webcerti.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/main/components/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/components/nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/main/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/blogimg1.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/blogimg1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/open-iconic-bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/open-iconic-bootstrap.min.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +44,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2CdVoCCytOqd2AtQQrb1Ta6ksT9" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -20,7 +54,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/css" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\python_project\django_web\static\css" />
+      <recent name="C:\python_project\django_web\static\images" />
+      <recent name="C:\python_project\django_web\media" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\python_project\django_web\static\images" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -32,5 +76,16 @@
       <updated>1659132620253</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

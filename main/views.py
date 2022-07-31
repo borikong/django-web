@@ -18,6 +18,7 @@ def posting(request, pk):
 
 ## 카테고리별 글 정렬
 def categorized(request, pk):
+    pkr=None
     if pk == "python-django":
         pkr = "PYTHON/DJANGO"
     elif pk == "java-spring":
@@ -31,3 +32,6 @@ def categorized(request, pk):
 ## 새로운 글 작성 및 등록 페이지
 def writing(request):
     return render(request,'main/writing.html')
+## home
+def home(request):
+    return render(request,'main/home.html')

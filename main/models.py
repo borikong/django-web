@@ -14,7 +14,7 @@ class Post(models.Model):
     )
 
     category = models.CharField(max_length=200, default="etc", choices=CATEGORIES)
-    postname=models.CharField(max_length=50)
+    postname=models.CharField(max_length=100)
     contents=models.TextField()
     mainphoto=models.ImageField(blank=True,null=True)
     subphoto1=models.ImageField(blank=True, null=True)
@@ -35,3 +35,7 @@ class Post(models.Model):
 
     def summary(self):
         return self.contents[:100]
+
+class myinfo(models.Model):
+    education = models.CharField(max_length=100)
+    workExperience = models.TextField()

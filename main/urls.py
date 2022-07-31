@@ -14,7 +14,8 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('blog/<int:pk>',posting,name='posting'),
     path('<str:pk>/',categorized,name='categorized'),
-    path('writing',writing,name='writing')
+    path('writing',writing,name='writing'),
+    path('home',home,name='home')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
