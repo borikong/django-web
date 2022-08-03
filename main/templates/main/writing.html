@@ -1,21 +1,7 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 {% load static %}
-<html lang="en">
 
-<head>
-    <title>dyblog</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
-</head>
-
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-{% include "./components/nav.html" %}
-
+{% block content %}
 <section class="ftco-section ftco-no-pb goto-here" id="post-section">
     <div class="container">
         <div class="row">
@@ -25,21 +11,22 @@
                     <h2 class="heading">New Post</h2>
 
                     <hr/>
-                    <form action="#" class="p-5 bg-light">
+                    <form method="POST",action="." class="p-5 bg-light">
+                        {% csrf_token %}
+                        {% for field in form %}
                         <div class="form-group">
-                            <label for="title">Title *</label>
-                            <input type="text" class="form-control" id="title">
+                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            {{ field.field.widget.name }}
+                            {% ifequal field.name 'contents' %}
+                            <textarea name="{{field.name}}" id="contents" placeholder="{{filed.label}}" cols="30" rows="10" class="form-control"></textarea>
+                            {% else %}
+                            <input type="{{field.field.widget.input_type}}" class="form-control" id="{{field.id_for_label}}" placeholder="{{field.label}}" name="{{field.name}}">
+                            {% endifequal %}
                         </div>
-
-                        <div class="form-group">
-                            <label for="content">Content</label>
-                            <textarea name="" id="content" cols="30" rows="10" class="form-control"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="image">Image</label>
-                            <input type="text" class="form-control" id="image">
-                        </div>
+                        {% if field.errors %}
+                        <span style="color:red">{{field.errors}}</span>
+                        {% endif %}
+                        {% endfor %}
                         <div class="form-group">
                             <input type="submit" value="Post" class="btn py-3 px-4 btn-primary">
                         </div>
@@ -55,15 +42,4 @@
 
 
 <a class="btn btn-primary" href="/" role="button">목록</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-{% include "./components/loader.html" %}
-{% include "./components/script.html" %}
-
-</body>
-
-</html>
+{% endblock %}

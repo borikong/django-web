@@ -15,7 +15,8 @@ urlpatterns = [
     path('blog/<int:pk>',posting,name='posting'),
     path('<str:pk>/',categorized,name='categorized'),
     path('writing',writing,name='writing'),
-    path('home',home,name='home')
+    path('home',home,name='home'),
+    path('blog/<int:pk>/delete/',delete,name='delete')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

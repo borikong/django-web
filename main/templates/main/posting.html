@@ -1,29 +1,16 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 {% load static %}
-<html lang="en">
 
-<head>
-	<title>dyblog</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
-	<link rel="stylesheet" href="{% static 'css/style2.css' %}">
-</head>
-
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-	{% include "./components/nav.html" %}
-
+{% block content %}
     <section class="ftco-section ftco-no-pb goto-here" id="post-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9" >
 					<div id="page-1" class="page one">
 						{% include "./components/c_nav.html" %}
+						<p style="color:red;">{{post.category}}</p>
 						<h2 class="heading">{{post.postname}}</h2>
-    <p>{{post.created_at}}</p>
+    <p>{{post.user}} | {{post.created_at}}</p>
 						<hr/>
     <pre>{{post.contents|linebreaks}}</pre>
 
@@ -31,17 +18,19 @@
         <img src="{{post.mainphoto.url}}" alt="이미지2" height="600">
         <br>
     {% endif %}
+						<form method="POST",action="{% url 'main:delete' pk=post.pk %}">
+							{% csrf_token %}
+							<input type="password" id="passwd" placeholder="비밀번호">
+							<input type="submit" value="삭제" class="btn btn-danger">
+						</form>
+						<a href="{% url 'main:delete' pk=post.pk %}" class="btn btn-danger">삭제</a>
 
-                         <a class="btn btn-primary" href="/" role="button">목록</a>
+					<br/>
+						<a class="btn btn-primary" href="/" role="button">목록</a>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
-{% include "./components/loader.html" %}
-{% include "./components/script.html" %}
-
-</body>
-
-</html>
+{% endblock %}
