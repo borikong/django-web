@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Post
-from .forms import PostForm
+from .forms import PostForm,DeleteForm
 
 ## 메인페이지
 def index(request):
@@ -19,7 +19,7 @@ def categorized(request, pk):
         pkr = "PYTHON/DJANGO"
     elif pk == "java-spring":
         pkr = "JAVA/SPRING"
-    elif pk == "android" or pk == "ml" or pk == "ps" or pk == "etc":
+    elif pk == "android" or pk == "ml" or pk == "ps" or pk=="guest" or pk == "etc":
         pkr = pk.upper()
 
     postlist = Post.objects.filter(category=pkr)
@@ -32,26 +32,35 @@ def writing(request):
         if form.is_valid():
             # user_id=request.session.get('user')
             post=Post()
+            post.category='GUEST'
+            post.user=form.cleaned_data['name']
             post.postname=form.cleaned_data['postname']
             post.contents=form.cleaned_data['contents']
+            post.passwd = form.cleaned_data['passwd']
             post.save()
             return redirect('/')
     else:
         form=PostForm()
     return render(request,'main/writing.html',{'form':form })
+
 ##글 삭제
 def delete(request,pk):
     post = Post.objects.get(pk=pk)
+    upasswd = request.POST.get("passwd")
+    # print("유저패스워드", upasswd)
+
     if request.method=="POST":
-        post.delete()
-        return redirect('/')
-    print("유저패스워드")
-    # upasswd=request.session.get('passwd')
-    # print("유저패스워드",upasswd)
-    # if post.passwd==upasswd:
-    #     post.delete()
-    #     return redirect('/')
-    return render(request,'/',{'post': post})
+        upasswd = request.POST.get("passwd")
+        print("유저패스워드", upasswd)
+        if upasswd==post.passwd:
+            post.delete()
+            return redirect('/')
+        else:
+            print('비밀번호 오류1')
+    else:
+        print('비밀번호 오류2')
+
+    return redirect('/')
 
 ## home
 def home(request):

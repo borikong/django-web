@@ -8,6 +8,7 @@ class PostAdmin(admin.ModelAdmin):
             'category',
             'postname',
             'hits',
+            'passwd',
             'mainphoto',
             'subphoto1',
             'subphoto2',

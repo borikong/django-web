@@ -18,12 +18,12 @@
         <img src="{{post.mainphoto.url}}" alt="이미지2" height="600">
         <br>
     {% endif %}
-						<form method="POST",action="{% url 'main:delete' pk=post.pk %}">
+						<form method="POST" action="{% url 'main:delete' pk=post.pk %}">
 							{% csrf_token %}
-							<input type="password" id="passwd" placeholder="비밀번호">
+							<input type="password" name="passwd" id="passwd" placeholder="비밀번호">
 							<input type="submit" value="삭제" class="btn btn-danger">
+							<!--<a href="{% url 'main:delete' pk=post.pk %}" class="btn btn-danger">삭제</a>-->
 						</form>
-						<a href="{% url 'main:delete' pk=post.pk %}" class="btn btn-danger">삭제</a>
 
 					<br/>
 						<a class="btn btn-primary" href="/" role="button">목록</a>

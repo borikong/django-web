@@ -10,6 +10,7 @@ class Post(models.Model):
         ('ANDROID', 'android'),
         ('ML', 'ml'),
         ('PS', 'ps'),
+        ('GUEST','guest'),
         ('ETC', 'etc')
     )
 
