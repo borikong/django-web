@@ -18,11 +18,10 @@
         <img src="{{post.mainphoto.url}}" alt="이미지2" height="600">
         <br>
     {% endif %}
-						<form method="POST" action="{% url 'main:delete' pk=post.pk %}">
+						<form name="delete" method="POST" action="{% url 'main:delete' pk=post.pk %}">
 							{% csrf_token %}
 							<input type="password" name="passwd" id="passwd" placeholder="비밀번호">
-							<input type="submit" value="삭제" class="btn btn-danger">
-							<!--<a href="{% url 'main:delete' pk=post.pk %}" class="btn btn-danger">삭제</a>-->
+							<input type="button" value="삭제" class="btn btn-danger" onclick="erchk()">
 						</form>
 
 					<br/>
@@ -33,4 +32,16 @@
 			</div>
 		</div>
 	</section>
+
+<script>
+function erchk() {
+      var res = confirm('게시글을 정말로 삭제하시겠습니까?');
+      if(res){
+      	document.delete.submit();
+      }else{
+      	return false
+      }
+    }
+</script>
+
 {% endblock %}

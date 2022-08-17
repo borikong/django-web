@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Post
 from .forms import PostForm,DeleteForm
+from django.contrib import messages
+from django.http import HttpResponse
 
 ## 메인페이지
 def index(request):
@@ -52,13 +54,18 @@ def delete(request,pk):
     if request.method=="POST":
         upasswd = request.POST.get("passwd")
         print("유저패스워드", upasswd)
-        if upasswd==post.passwd:
+        if upasswd==post.passwd: ##비밀번호가 맞으면 삭제
             post.delete()
-            return redirect('/')
-        else:
-            print('비밀번호 오류1')
+            return HttpResponse(
+                "<script>alert('성공적으로 게시글이 삭제되었습니다.');location.href='/'</script>")
+
+        else: ##틀리면 오류 페이지로
+            return HttpResponse(
+                "<script>alert('비밀번호가 틀립니다!');location.href='javascript:window.history.back();'</script>")
     else:
-        print('비밀번호 오류2')
+        print('내부오류')
+        return HttpResponse(
+                "<script>alert('전송 오류입니다. 다시 시도해 주세요.');location.href='javascript:window.history.back();'</script>")
 
     return redirect('/')
 
