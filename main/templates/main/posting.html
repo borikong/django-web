@@ -20,7 +20,7 @@
     {% endif %}
 						<form name="delete" method="POST" action="{% url 'main:delete' pk=post.pk %}">
 							{% csrf_token %}
-							<input type="password" name="passwd" id="passwd" placeholder="비밀번호">
+							<input type="password" name="passwd" id="passwd" placeholder="password">
 							<input type="button" value="삭제" class="btn btn-danger" onclick="erchk()">
 						</form>
 
