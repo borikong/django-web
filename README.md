@@ -12,4 +12,4 @@ http://ec2-13-125-241-175.ap-northeast-2.compute.amazonaws.com/
 
 #2. 조회수
 
-#3.  D
+#3.  댓글
